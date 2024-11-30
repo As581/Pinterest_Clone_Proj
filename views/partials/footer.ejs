@@ -1,0 +1,65 @@
+<footer class=' bg-gray-950 text-white flex flex-col md:flex-row justify-between items-center py-6 px-4 md:px-10 gap-6'>
+  <div class='flex flex-col items-center md:items-start gap-2 md:gap-6'>
+    <div class='flex flex-col items-center md:items-start gap-2'>
+      <div id="currentYear" class='text-sm md:text-base'></div>
+      <div class='text-xs md:text-sm text-gray-500'>THIS IS ASHISH<div>
+    </div>
+  </div>
+
+  <div class='flex flex-col items-center gap-3'>
+    <div class='text-sm md:text-base'>Follow me on</div>
+    <div class='flex gap-4 items-center'>
+      <a target='_blank' class='border border-zinc-400 py-2 px-3 rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2'>
+        <i class="ri-github-fill"></i>
+        <span class='hidden md:inline'>GitHub</span>
+      </a>
+      <a target='_blank' class='border border-zinc-400 py-2 px-3 rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2'>
+        <i class="ri-linkedin-fill"></i>
+        <span class='hidden md:inline'>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+     function closeAlert() {
+          const alert = document.getElementById('success-alert');
+          alert.classList.add('opacity-0');
+          setTimeout(() => {
+            alert.remove();
+          }, 500); // 500ms to match the transition duration
+        }
+
+        window.onload = () => {
+          const alert = document.getElementById('success-alert');
+          if (alert) {
+            setTimeout(() => {
+              closeAlert();
+            }, 3000); // 3 seconds
+          }
+        }
+
+
+  const currentYear = new Date().getFullYear();
+  document.getElementById('currentYear').innerHTML = `Copyright &copy; ${currentYear} ASHISH VISHWAKARMA | All rights reserved!`
+</script>
+<!-- JavaScript for Popup Modal -->
+<script>
+  function openSavePopup(postId) {
+    alert('Open Popup for Post ID: ' + postId); // Test alert
+    document.getElementById('save-popup').classList.remove('hidden');
+    document.getElementById('popup-post-id').value = postId;
+  }
+
+  function closeSavePopup() {
+    document.getElementById('save-popup').classList.add('hidden');
+  }
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>
