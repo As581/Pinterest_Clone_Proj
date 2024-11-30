@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %> 
+
+<body class="bg-gray-100">
+
+  <!-- Main Container -->
+  <div class="max-w-2xl mx-auto bg-white p-8 mt-10 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Edit Profile</h1>
+
+    <!-- Profile Edit Form -->
+    <form action="/profile/edit" method="POST" class="space-y-6">
+      <!-- Username Field -->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" value="<%= user.username %>" 
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+      </div>
+
+      <!-- Email Field (Read-only) -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>" readonly
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-500 shadow-sm sm:text-sm">
+      </div>
+
+      <!-- Fullname Field -->
+      <div>
+        <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" id="fullname" name="fullname" value="<%= user.fullname %>" 
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button type="submit" 
+          class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          Save Changes
+        </button>
+      </div>
+    </form>
+
+    <!-- Back to Profile Link -->
+    <div class="mt-6 text-center">
+      <a href="/profile" class="text-indigo-600 hover:underline">Back to Profile</a>
+    </div>
+  </div>
+
+</body>
+<%- include('./partials/footer.ejs') %>
+
